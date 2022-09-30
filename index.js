@@ -24,7 +24,7 @@ module.exports = async function getUsers(
         })
         .then((contests) => {
             // In this block, we store the response data into a variable 'result'
-            result.status = contests.status;
+            result.statusCode = contests.status;
             result.message = "Data successfully fetched.";
             result.data = contests.data;
         })
