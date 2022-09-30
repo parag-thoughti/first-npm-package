@@ -1,3 +1,4 @@
+const { ResponseHelper } = require("./src/helpers");
 // module.exports exports the function getUsers as a promise and exposes it as a module.
 // we can import an exported module by using require().
 /**
@@ -13,7 +14,7 @@ module.exports = async function getUsers(
     const axios = require("axios"); // Importing the Axios module to make API requests
 
     let apiPath = `${apiEndpoint}${queryParams}`;
-    let result = null;
+    let result = {};
 
     await axios // Making a GET request using axios and requesting information from the API
         .get(apiPath)
@@ -23,10 +24,12 @@ module.exports = async function getUsers(
         })
         .then((contests) => {
             // In this block, we store the response data into a variable 'result'
-            result = contests.data;
+            result.status = contests.status;
+            result.message = "Data successfully fetched.";
+            result.data = contests.data;
         })
         .catch((err) => {
-            console.log(err); // Error handler
+            result = ResponseHelper.parseApiErrorResponse(err);
         });
     return result; // The contest data is returned
 };

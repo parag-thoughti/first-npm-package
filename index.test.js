@@ -1,23 +1,17 @@
 const users = require("./index");
+const { LogHelper } = require("./src/helpers");
 
 (async () => {
     let userList = null;
 
     let apiEndpoint = "https://reqres.in/api/users";
+    apiEndpoint = "http://localhost:5000/api/users"
     let queryParams = "?page=1&per_page=5";
 
     try {
         userList = await users(apiEndpoint, queryParams);
-        console.info(
-            "\n=========================>\nuserList: ",
-            userList,
-            "\n<=========================\n"
-        ); // REMOVE console
+        LogHelper.logMessage("Data found.", userList);
     } catch (userListErr) {
-        console.error(
-            "\n=========================>\nuserListErr: ",
-            userListErr,
-            "\n<=========================\n"
-        ); // REMOVE console
+        LogHelper.logError("Error while getting data.", userListErr);
     }
 })();

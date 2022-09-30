@@ -1,6 +1,6 @@
 {
     "name": "get-dummy-users",
-    "version": "1.0.0",
+    "version": "1.5.0",
     "description": "First NPM package as a tutorial",
     "main": "index.js",
     "scripts": {
