@@ -1,0 +1,23 @@
+{
+    "name": "first-npm-package",
+    "version": "1.0.0",
+    "description": "First NPM package as a tutorial",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/parag-thoughti/first-npm-package.git"
+    },
+    "bugs": {
+        "url": "https://github.com/parag-thoughti/first-npm-package/issues"
+    },
+    "homepage": "https://github.com/parag-thoughti/first-npm-package#readme",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.27.2"
+    }
+}
